@@ -1,0 +1,36 @@
+{
+    "Breakfast": [
+        {
+            "item_id": "c504e1",
+            "item_name": "tea",
+            "size": "Half",
+            "price": "20",
+            "category": "Breakfast"
+        }
+    ],
+    "Lunch": [
+        {
+            "item_id": "3f33ea",
+            "item_name": "orange juice",
+            "size": "Half",
+            "price": "50",
+            "category": "Lunch"
+        }
+    ],
+    "Dinner": [
+        {
+            "item_id": "f3c149",
+            "item_name": "daal",
+            "size": "Full",
+            "price": "300",
+            "category": "Dinner"
+        },
+        {
+            "item_id": "eecce3",
+            "item_name": "chawal",
+            "size": "Half",
+            "price": "60",
+            "category": "Dinner"
+        }
+    ]
+}

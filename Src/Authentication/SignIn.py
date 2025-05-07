@@ -1,5 +1,5 @@
 import json
-
+from Src.Domain.Menu.Menu import Menu
 class SignIn_Management:
     def __init__(self):
         self.admin_data = []
@@ -27,7 +27,9 @@ class SignIn_Management:
 
         for user in data:
             if user.get("Username") == username and user.get("Password") == password:
-                print(f"Welcome {user_type.capitalize()}")
+                print(f"\nWelcome {user_type.capitalize()}")
+                MyMenu=Menu()
+                MyMenu.menucard()
                 return
         print("Please enter correct credentials")
 
