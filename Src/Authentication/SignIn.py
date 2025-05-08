@@ -28,9 +28,13 @@ class SignIn_Management:
         for user in data:
             if user.get("Username") == username and user.get("Password") == password:
                 print(f"\nWelcome {user_type.capitalize()}")
-                MyMenu=Menu()
-                MyMenu.menucard()
+                MyMenu = Menu()
+                if user_type == "admin":
+                    MyMenu.menucard()
+                elif user_type == "staff":
+                    MyMenu.staff_menu()
                 return
+
         print("Please enter correct credentials")
 
     def Signin(self, admin_path, staff_path):

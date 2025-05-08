@@ -1,0 +1,59 @@
+[
+    {
+        "order_id": "258a1d4f",
+        "items": [
+            {
+                "item_id": "c504e1",
+                "item_name": "tea",
+                "size": "Half",
+                "price": "20",
+                "category": "Breakfast"
+            },
+            {
+                "item_id": "f3c149",
+                "item_name": "daal",
+                "size": "Full",
+                "price": "300",
+                "category": "Dinner"
+            }
+        ],
+        "total_amount": 320
+    },
+    {
+        "order_id": "d2feb570",
+        "items": [
+            {
+                "item_id": "f3c149",
+                "item_name": "daal",
+                "size": "Full",
+                "price": "300",
+                "category": "Dinner"
+            }
+        ],
+        "total_amount": 300
+    },
+    {
+        "order_id": "fd9e5d7d",
+        "order_date": "2025-05-08 08:40:17",
+        "items": [
+            {
+                "item_id": "3f33ea",
+                "item_name": "orange juice",
+                "size": "Half",
+                "price": "50",
+                "category": "Lunch"
+            },
+            {
+                "item_id": "f3c149",
+                "item_name": "daal",
+                "size": "Full",
+                "price": "300",
+                "category": "Dinner"
+            }
+        ],
+        "subtotal": 350,
+        "tax": 17.5,
+        "discount": 0,
+        "total_amount": 367.5
+    }
+]

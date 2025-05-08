@@ -1,7 +1,7 @@
 import uuid
 import json
 import os
-
+from Src.Domain.Order.OrderProcessing import OrderProcessing 
 class Menu:
 
     def __init__(self):
@@ -150,3 +150,34 @@ class Menu:
 
             else:
                 print("Invalid choice! Please try again.")
+
+
+
+
+    def staff_menu(self):
+        while True:
+            print("\n--- Staff Menu ---")
+            print("1. View Full Menu")
+            print("2. Process Order")
+            print("3. Exit")
+
+            choice = input("Enter your choice: ").strip()
+
+            if choice == "1":
+                print("\n--- Full Menu ---")
+                for category, items in self.FoodMenu.items():
+                    print(f"\n{category}:")
+                    if not items:
+                        print("  No items yet.")
+                    else:
+                        for item in items:
+                            print(f"  ID: {item['item_id']} | Name: {item['item_name']} | Size: {item['size']} | Price: ₹{item['price']}")
+            elif choice == "2":
+                order = OrderProcessing(self.filename)
+                order.process()
+            elif choice == "3":
+                print("Exiting Staff Menu... 👋")
+                break
+            else:
+                print("Invalid choice! Please try again.")
+
