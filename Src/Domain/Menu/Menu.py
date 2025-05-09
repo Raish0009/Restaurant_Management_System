@@ -1,7 +1,8 @@
 import uuid
 import json
 import os
-from Src.Domain.Order.OrderProcessing import OrderProcessing 
+from Src.Domain.Order.OrderProcessing import OrderProcessing
+
 class Menu:
 
     def __init__(self):
@@ -76,6 +77,17 @@ class Menu:
         if not found:
             print(f"No item found with name '{name}'.")
 
+    def display_table(self):
+        for category, items in self.FoodMenu.items():
+            print(f"\n{category}:")
+            if not items:
+                print("  No items yet.")
+            else:
+                print(f"{'ID':<8} | {'Name':<20} | {'Size':<6} | {'Price':<6}")
+                print("-" * 50)
+                for item in items:
+                    print(f"{item['item_id']:<8} | {item['item_name']:<20} | {item['size']:<6} | ₹{item['price']:<6}")
+
     def menucard(self):
         while True:
             print("\n--- Menu Management ---")
@@ -89,13 +101,7 @@ class Menu:
 
             if choice == "1":
                 print("\n--- Full Menu ---")
-                for category, items in self.FoodMenu.items():
-                    print(f"\n{category}:")
-                    if not items:
-                        print("  No items yet.")
-                    else:
-                        for item in items:
-                            print(f"  ID: {item['item_id']} | Name: {item['item_name']} | Size: {item['size']} | Price: ₹{item['price']}")
+                self.display_table()
 
             elif choice == "2":
                 menuDict = {}
@@ -151,9 +157,6 @@ class Menu:
             else:
                 print("Invalid choice! Please try again.")
 
-
-
-
     def staff_menu(self):
         while True:
             print("\n--- Staff Menu ---")
@@ -165,19 +168,15 @@ class Menu:
 
             if choice == "1":
                 print("\n--- Full Menu ---")
-                for category, items in self.FoodMenu.items():
-                    print(f"\n{category}:")
-                    if not items:
-                        print("  No items yet.")
-                    else:
-                        for item in items:
-                            print(f"  ID: {item['item_id']} | Name: {item['item_name']} | Size: {item['size']} | Price: ₹{item['price']}")
+                self.display_table()
+
             elif choice == "2":
                 order = OrderProcessing(self.filename)
                 order.process()
+
             elif choice == "3":
                 print("Exiting Staff Menu... 👋")
                 break
+
             else:
                 print("Invalid choice! Please try again.")
-
