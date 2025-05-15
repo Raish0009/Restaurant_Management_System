@@ -16,5 +16,11 @@
         "Username": "raees",
         "Email": "raees@gmail.com",
         "Password": "hello@123"
+    },
+    {
+        "id": "f49b36",
+        "Username": "vaibhav",
+        "Email": "vaibhav@gmail.com",
+        "Password": "vaibhav@123"
     }
 ]

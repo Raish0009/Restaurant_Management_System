@@ -236,18 +236,3 @@ class Menu:
 
             else:
                 print("Invalid choice! Please try again.")
-
-
-if __name__ == '__main__':
-    if 'OrderProcessing' not in globals():
-        class OrderProcessing:
-            def __init__(self, menu_filename_or_data):
-                self.menu_ref = menu_filename_or_data
-                print(f"OrderProcessing initialized with menu reference: {self.menu_ref}")
-            def process(self):
-                print("Order processing started...")
-                print("Order processed (dummy).")
-
-    menu_system = Menu()
-    
-    menu_system.staff_menu() 

@@ -1,6 +1,7 @@
 import json
 import uuid
 import re
+
 class SignUp_Management:
     def __init__(self):
         self.EmployeeData = []
@@ -31,7 +32,16 @@ class SignUp_Management:
         except (FileNotFoundError, json.JSONDecodeError):
             self.EmployeeData = []
 
-        name = input("Enter your name: ").strip()
+        # Name Validation Loop
+        while True:
+            name = input("Enter your name: ").strip()
+            if not name:
+                print("❌ Name cannot be empty. Please try again.")
+                continue
+            if not name.replace(" ", "").isalpha():
+                print("❌ Name must contain only alphabets and spaces.")
+                continue
+            break
 
         # Email Validation Loop
         while True:
@@ -67,11 +77,12 @@ class SignUp_Management:
             json.dump(self.EmployeeData, file, indent=4)
 
         print("✅ Employee signed up successfully with ID:", employee_id)
-        from Src.Authentication.Manage import Manage
-        manage = Manage()
-        manage.management()
+        
+        # Optional: Manage system after sign-up
+        try:
+            from Src.Authentication.Manage import Manage
+            manage = Manage()
+            manage.management()
+        except ModuleNotFoundError:
+            print("⚠️ 'Manage' module not found. Skipping post-signup management.")
 
-
-if __name__ == "__main__":
-    manager = SignUp_Management()
-    manager.Signup("employees.json")
