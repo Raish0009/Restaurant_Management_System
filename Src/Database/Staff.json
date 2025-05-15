@@ -4,5 +4,17 @@
         "Username": "rohit",
         "Email": "rohit@gmail.com",
         "Password": "123"
+    },
+    {
+        "id": "23a881",
+        "Username": "mohit",
+        "Email": "mohit@gmail.com",
+        "Password": "hello@123"
+    },
+    {
+        "id": "f797d8",
+        "Username": "raees",
+        "Email": "raees@gmail.com",
+        "Password": "hello@123"
     }
 ]

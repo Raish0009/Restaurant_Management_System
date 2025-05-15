@@ -1,36 +1,55 @@
 {
     "Breakfast": [
         {
-            "item_id": "c504e1",
-            "item_name": "tea",
-            "size": "Half",
-            "price": "20",
+            "item_id": "7a664b",
+            "item_name": "French fries",
+            "size": "Full",
+            "price": "100",
             "category": "Breakfast"
         }
     ],
     "Lunch": [
         {
-            "item_id": "3f33ea",
-            "item_name": "orange juice",
-            "size": "Half",
-            "price": "50",
+            "item_id": "f2af17",
+            "item_name": "Samosa",
+            "size": "Piece",
+            "price": "40",
             "category": "Lunch"
         }
     ],
-    "Dinner": [
+    "Dinner": [],
+    "Snacks": [],
+    "Drinks": [
         {
-            "item_id": "f3c149",
-            "item_name": "daal",
-            "size": "Full",
-            "price": "300",
-            "category": "Dinner"
+            "item_id": "e1f10b",
+            "item_name": "Water",
+            "size": "Bottle",
+            "price": "30",
+            "category": "Drinks"
         },
         {
-            "item_id": "eecce3",
-            "item_name": "chawal",
-            "size": "Half",
-            "price": "60",
-            "category": "Dinner"
+            "item_id": "fe7d54",
+            "item_name": "Green tea",
+            "size": "Serving",
+            "price": "50",
+            "category": "Drinks"
+        },
+        {
+            "item_id": "c50e9d",
+            "item_name": "Coffee",
+            "size": "Serving",
+            "price": "30",
+            "category": "Drinks"
         }
-    ]
+    ],
+    "Desserts": [
+        {
+            "item_id": "01f43c",
+            "item_name": "pancake",
+            "size": "Piece",
+            "price": "40",
+            "category": "Desserts"
+        }
+    ],
+    "Soft Drinks": []
 }

@@ -2,6 +2,8 @@ import json
 import os
 import uuid
 import datetime
+from Src.Domain.Bill.Billing import Bills
+from Src.Domain.Booking.Table import TableBooking
 class OrderProcessing:
     def __init__(self, menu_path):
         self.menu_path = menu_path
@@ -29,8 +31,11 @@ class OrderProcessing:
             if not items:
                 print("  No items available.")
             else:
-                for i, item in enumerate(items, start=1):
-                    print(f"  {i}. {item['item_name']} ({item['size']}) - ₹{item['price']}")
+                print(f"{'ID':<8} | {'Name':<20} | {'Size':<6} | {'Price':<6}")
+                print("-" * 50)
+                for item in items:
+                    print(f"{item['item_id']:<8} | {item['item_name']:<20} | {item['size']:<6} | ₹{item['price']:<6}")
+
 
     def add_item(self):
         self.display_menu()
@@ -73,14 +78,24 @@ class OrderProcessing:
             print("No items in order.")
             return
 
-        print("\n--- Final Order ---")
-        subtotal = 0
-        for item in self.order:
-            print(f"{item['item_name']} ({item['size']}) - ₹{item['price']}")
-            subtotal += int(item['price'])
+        print("\nSelect Order Type:")
+        print("1. Pack Order")
+        print("2. Table Booking")
+        order_type = input("Enter choice (1 or 2): ").strip()
 
-        tax_rate = 0.05  # 5% tax
-        discount_rate = 0.10 if subtotal >= 500 else 0  # 10% discount for orders >= ₹500
+        if order_type == "2":
+            
+            booking = TableBooking()
+            booking.book_table()
+        elif order_type != "1":
+            print("❌ Invalid choice. Cancelling billing.")
+            return
+
+        print("\n--- Final Order ---")
+        subtotal = sum(int(item['price']) for item in self.order)
+
+        tax_rate = 0.05
+        discount_rate = 0.10 if subtotal >= 500 else 0
 
         tax = round(subtotal * tax_rate, 2)
         discount = round(subtotal * discount_rate, 2)
@@ -91,9 +106,8 @@ class OrderProcessing:
         if discount_rate > 0:
             print(f"Discount (10%): -₹{discount}")
         print(f"Total Amount: ₹{total}")
-        print("Order finalized. Thank you!")
+        print("Please proceed to payment...")
 
-        # Save order to Order.json
         order_id = str(uuid.uuid4())[:8]
         order_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -104,28 +118,21 @@ class OrderProcessing:
             "subtotal": subtotal,
             "tax": tax,
             "discount": discount,
-            "total_amount": total
-        }
-
-        # Save to Order.json
-        self.append_to_file("F:\\Restaurant_Management_System\\Src\\Database\\Order.json", final_order)
-        print("Order saved to Order.json ✅")
-
-        # Save to Bill.json
-        bill_details = {
-            "bill_id": str(uuid.uuid4())[:8],
-            "order_id": order_id,
-            "generated_at": order_date,
             "total_amount": total,
-            "tax": tax,
-            "discount": discount,
-            "final_total": total
+            "order_type": "Pack Order" if order_type == "1" else "Table Booking"
         }
 
-        self.append_to_file("F:\Restaurant_Management_System\Src\Database\Bill.json", bill_details)
-        print("Bill saved to Bill.json 🧾")
+        billing = Bills(rf"F:\Restaurant_Management_System\Src\Database\Bill.json")
+        payment_success = billing.generate_invoice(final_order)
 
-        self.order.clear()  # Reset order
+        if payment_success:
+            self.append_to_file(self.order_file, final_order)
+            print("✅ Order saved to Order.json")
+            self.order.clear()
+        else:
+            print("❌ Payment failed or cancelled. Order not saved.")
+
+
 
 
     def append_to_file(self, filepath, data):
@@ -151,7 +158,8 @@ class OrderProcessing:
             print("1. Add Item")
             print("2. Remove Item")
             print("3. Finalize Order")
-            print("4. Exit")
+            print("4. Book a Table")
+            print("5. Exit")
 
             choice = input("Enter your choice: ").strip()
 
@@ -162,6 +170,9 @@ class OrderProcessing:
             elif choice == "3":
                 self.finalize_order()
             elif choice == "4":
+                booking = TableBooking()
+                booking.book_table()
+            elif choice == "5":
                 print("Exiting Order Menu...")
                 break
             else:
