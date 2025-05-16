@@ -7,6 +7,7 @@ class Menu:
 
     def __init__(self):
         self.filename = rf"F:\Restaurant_Management_System\Src\Database\Menu.json"
+        
         self.base_categories = [
             "Breakfast", "Lunch", "Dinner", "Snacks", 
             "Drinks", "Desserts", "Soft Drinks"
