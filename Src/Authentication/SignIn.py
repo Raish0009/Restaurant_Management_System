@@ -1,4 +1,5 @@
 import json
+import getpass 
 from Src.Domain.Menu.Menu import Menu
 
 class SignIn_Management:
@@ -7,7 +8,6 @@ class SignIn_Management:
         self.staff_data = []
 
     def get_credentials(self):
-        # Username validation
         while True:
             username = input("Enter your username: ").strip()
             if not username:
@@ -18,9 +18,8 @@ class SignIn_Management:
                 continue
             break
 
-        # Password validation
         while True:
-            password = input("Enter your password: ").strip()
+            password = getpass.getpass("Enter your password: ").strip()
             if not password:
                 print("❌ Password cannot be empty.")
                 continue

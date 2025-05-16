@@ -1,6 +1,7 @@
 import json
 import uuid
 import re
+import getpass
 
 class SignUp_Management:
     def __init__(self):
@@ -56,9 +57,13 @@ class SignUp_Management:
 
         # Password Validation Loop
         while True:
-            password = input("Enter your password: ").strip()
+            password = getpass.getpass("Enter your password: ").strip()
             if not self.is_valid_password(password):
                 print("❌ Password must be at least 6 characters long, contain at least one digit and one special character.")
+                continue
+            confirm_password = getpass.getpass("Confirm your password: ").strip()
+            if password != confirm_password:
+                print("❌ Passwords do not match. Please try again.")
                 continue
             break
 
@@ -68,7 +73,7 @@ class SignUp_Management:
             "id": employee_id,
             "Username": name,
             "Email": email,
-            "Password": password
+            "Password": password  
         }
 
         self.EmployeeData.append(employee)
@@ -77,12 +82,10 @@ class SignUp_Management:
             json.dump(self.EmployeeData, file, indent=4)
 
         print("✅ Employee signed up successfully with ID:", employee_id)
-        
-        # Optional: Manage system after sign-up
+
         try:
             from Src.Authentication.Manage import Manage
             manage = Manage()
             manage.management()
         except ModuleNotFoundError:
             print("⚠️ 'Manage' module not found. Skipping post-signup management.")
-

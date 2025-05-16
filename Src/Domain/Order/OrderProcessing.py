@@ -4,13 +4,13 @@ import uuid
 import datetime
 from Src.Domain.Bill.Billing import Bills
 from Src.Domain.Booking.Table import TableBooking
+
 class OrderProcessing:
     def __init__(self, menu_path):
         self.menu_path = menu_path
         self.menu = self.load_menu()
         self.order = []
         self.order_file = rf"F:\Restaurant_Management_System\Src\Database\Order.json"
-
 
     def load_menu(self):
         if os.path.exists(self.menu_path):
@@ -36,7 +36,6 @@ class OrderProcessing:
                 for item in items:
                     print(f"{item['item_id']:<8} | {item['item_name']:<20} | {item['size']:<6} | ₹{item['price']:<6}")
 
-
     def add_item(self):
         self.display_menu()
         name = input("\nEnter item name to add: ").strip().lower()
@@ -44,14 +43,31 @@ class OrderProcessing:
         for category in self.menu.values():
             for item in category:
                 if item["item_name"].lower() == name:
-                    self.order.append(item)
-                    print(f"Added: {item['item_name']} ({item['size']})")
+                    try:
+                        quantity = int(input(f"Enter quantity for {item['item_name']}: "))
+                        if quantity <= 0:
+                            print("Quantity must be at least 1.")
+                            return
+                    except ValueError:
+                        print("Invalid quantity. Please enter a number.")
+                        return
+
+                    order_item = {
+                        "item_id": item["item_id"],
+                        "item_name": item["item_name"],
+                        "size": item["size"],
+                        "price": int(item["price"]),
+                        "quantity": quantity,
+                        "total_price": int(item["price"]) * quantity
+                    }
+                    self.order.append(order_item)
+                    print(f"✅ Added: {item['item_name']} ({item['size']}) x {quantity}")
                     found = True
                     break
             if found:
                 break
         if not found:
-            print("Item not found in the menu.")
+            print("❌ Item not found in the menu.")
 
     def remove_item(self):
         if not self.order:
@@ -60,7 +76,7 @@ class OrderProcessing:
 
         print("\n--- Current Order ---")
         for i, item in enumerate(self.order, start=1):
-            print(f"{i}. {item['item_name']} ({item['size']}) - ₹{item['price']}")
+            print(f"{i}. {item['item_name']} ({item['size']}) x {item['quantity']} - ₹{item['total_price']}")
 
         try:
             index = int(input("Enter item number to remove: "))
@@ -71,7 +87,6 @@ class OrderProcessing:
                 print("Invalid index.")
         except ValueError:
             print("Please enter a valid number.")
-
 
     def finalize_order(self):
         if not self.order:
@@ -84,7 +99,6 @@ class OrderProcessing:
         order_type = input("Enter choice (1 or 2): ").strip()
 
         if order_type == "2":
-            
             booking = TableBooking()
             booking.book_table()
         elif order_type != "1":
@@ -92,8 +106,12 @@ class OrderProcessing:
             return
 
         print("\n--- Final Order ---")
-        subtotal = sum(int(item['price']) for item in self.order)
+        print(f"{'Name':<20} {'Size':<6} {'Qty':<4} {'Unit Price':<10} {'Total':<8}")
+        print("-" * 60)
+        for item in self.order:
+            print(f"{item['item_name']:<20} {item['size']:<6} {item['quantity']:<4} ₹{item['price']:<10} ₹{item['total_price']:<8}")
 
+        subtotal = sum(item['total_price'] for item in self.order)
         tax_rate = 0.05
         discount_rate = 0.10 if subtotal >= 500 else 0
 
@@ -132,9 +150,6 @@ class OrderProcessing:
         else:
             print("❌ Payment failed or cancelled. Order not saved.")
 
-
-
-
     def append_to_file(self, filepath, data):
         try:
             if os.path.exists(filepath):
@@ -149,8 +164,6 @@ class OrderProcessing:
 
         with open(filepath, 'w') as file:
             json.dump(existing, file, indent=4)
-
-
 
     def process(self):
         while True:

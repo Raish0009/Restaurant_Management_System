@@ -1,10 +1,52 @@
 {
     "Breakfast": [
         {
-            "item_id": "7a664b",
-            "item_name": "French fries",
+            "item_id": "fb1329",
+            "item_name": "Masala paratha",
+            "size": "Serving",
+            "price": "40",
+            "category": "Breakfast"
+        },
+        {
+            "item_id": "96f309",
+            "item_name": "Oats",
+            "size": "Serving",
+            "price": "60",
+            "category": "Breakfast"
+        },
+        {
+            "item_id": "998be3",
+            "item_name": "Avocado Toast",
+            "size": "Piece",
+            "price": "250",
+            "category": "Breakfast"
+        },
+        {
+            "item_id": "8d20fd",
+            "item_name": "Cheese Dosa",
+            "size": "Serving",
+            "price": "99",
+            "category": "Breakfast"
+        },
+        {
+            "item_id": "4ac16d",
+            "item_name": "Poha",
             "size": "Full",
-            "price": "100",
+            "price": "50",
+            "category": "Breakfast"
+        },
+        {
+            "item_id": "ffdbb3",
+            "item_name": "Peanut butter toast",
+            "size": "Piece",
+            "price": "70",
+            "category": "Breakfast"
+        },
+        {
+            "item_id": "24aad0",
+            "item_name": "Sprouts Salad",
+            "size": "Full",
+            "price": "80",
             "category": "Breakfast"
         }
     ],
@@ -15,10 +57,166 @@
             "size": "Piece",
             "price": "40",
             "category": "Lunch"
+        },
+        {
+            "item_id": "6b124b",
+            "item_name": "Veggie fried cauliflower rice",
+            "size": "Full",
+            "price": "99",
+            "category": "Lunch"
+        },
+        {
+            "item_id": "73ac54",
+            "item_name": "Rajma Chawal",
+            "size": "Full",
+            "price": "70",
+            "category": "Lunch"
+        },
+        {
+            "item_id": "c94a62",
+            "item_name": "Chana Kulcha",
+            "size": "Serving",
+            "price": "60",
+            "category": "Lunch"
+        },
+        {
+            "item_id": "49f56f",
+            "item_name": "Masala Bhindi",
+            "size": "Serving",
+            "price": "50",
+            "category": "Lunch"
+        },
+        {
+            "item_id": "b78b72",
+            "item_name": "Dal Makhani",
+            "size": "Serving",
+            "price": "80",
+            "category": "Lunch"
+        },
+        {
+            "item_id": "40ea05",
+            "item_name": "Paneer Kofta",
+            "size": "Serving",
+            "price": "90",
+            "category": "Lunch"
+        },
+        {
+            "item_id": "5e4e08",
+            "item_name": "Naan",
+            "size": "Serving",
+            "price": "20",
+            "category": "Lunch"
+        },
+        {
+            "item_id": "07b527",
+            "item_name": "Tawa roti",
+            "size": "Serving",
+            "price": "8",
+            "category": "Lunch"
+        },
+        {
+            "item_id": "2097a5",
+            "item_name": "Tandoori Roti",
+            "size": "Serving",
+            "price": "15",
+            "category": "Lunch"
         }
     ],
-    "Dinner": [],
-    "Snacks": [],
+    "Dinner": [
+        {
+            "item_id": "b04979",
+            "item_name": "Veg Dum Biryani",
+            "size": "Full",
+            "price": "89",
+            "category": "Dinner"
+        },
+        {
+            "item_id": "88c569",
+            "item_name": "Paneer Butter Masala",
+            "size": "Serving",
+            "price": "150",
+            "category": "Dinner"
+        },
+        {
+            "item_id": "8783ef",
+            "item_name": "Veg Pulao",
+            "size": "Half",
+            "price": "69",
+            "category": "Dinner"
+        },
+        {
+            "item_id": "0c2f1c",
+            "item_name": "Chana Dal",
+            "size": "Serving",
+            "price": "99",
+            "category": "Dinner"
+        },
+        {
+            "item_id": "e27f6d",
+            "item_name": "Matar Paneer",
+            "size": "Serving",
+            "price": "200",
+            "category": "Dinner"
+        },
+        {
+            "item_id": "f2e129",
+            "item_name": "Dal Fry",
+            "size": "Serving",
+            "price": "80",
+            "category": "Dinner"
+        },
+        {
+            "item_id": "b43d64",
+            "item_name": "Tawa Roti",
+            "size": "Serving",
+            "price": "8",
+            "category": "Dinner"
+        },
+        {
+            "item_id": "a805a0",
+            "item_name": "Tandoori Roti",
+            "size": "Serving",
+            "price": "15",
+            "category": "Dinner"
+        }
+    ],
+    "Snacks": [
+        {
+            "item_id": "be5ef5",
+            "item_name": "Veg Cutlet",
+            "size": "Piece",
+            "price": "30",
+            "category": "Snacks"
+        },
+        {
+            "item_id": "5fbc4c",
+            "item_name": "Cheese Balls",
+            "size": "Piece",
+            "price": "10",
+            "category": "Snacks"
+        },
+        {
+            "item_id": "cfcdac",
+            "item_name": "French Fries",
+            "size": "Serving",
+            "price": "80",
+            "category": "Snacks"
+        },
+        {
+            "item_id": "2dca71",
+            "item_name": "Samosa",
+            "size": "Piece",
+            "price": "20",
+            "category": "Snacks"
+        },
+        {
+            "item_id": "58234b",
+            "item_name": "Aloo chaat",
+            "size": "Full",
+            "price": "50",
+            "category": "Snacks"
+        }
+    ],
     "Drinks": [
         {
             "item_id": "e1f10b",
@@ -40,6 +238,27 @@
             "size": "Serving",
             "price": "30",
             "category": "Drinks"
+        },
+        {
+            "item_id": "b829f3",
+            "item_name": "Mango smoothie",
+            "size": "Glass",
+            "price": "60",
+            "category": "Drinks"
+        },
+        {
+            "item_id": "3a0c4e",
+            "item_name": "Avocado Mojito",
+            "size": "Glass",
+            "price": "250",
+            "category": "Drinks"
+        },
+        {
+            "item_id": "ca4618",
+            "item_name": "Banana & Oats Smoothie",
+            "size": "Glass",
+            "price": "99",
+            "category": "Drinks"
         }
     ],
     "Desserts": [
@@ -49,7 +268,64 @@
             "size": "Piece",
             "price": "40",
             "category": "Desserts"
+        },
+        {
+            "item_id": "d59ab8",
+            "item_name": "Brownies",
+            "size": "Piece",
+            "price": "89",
+            "category": "Desserts"
+        },
+        {
+            "item_id": "6f0f6f",
+            "item_name": "Chocolate pudding",
+            "size": "Piece",
+            "price": "129",
+            "category": "Desserts"
+        },
+        {
+            "item_id": "fe84ed",
+            "item_name": "Gulab Jamun",
+            "size": "Piece",
+            "price": "10",
+            "category": "Desserts"
+        },
+        {
+            "item_id": "edf15c",
+            "item_name": "Halwa",
+            "size": "Serving",
+            "price": "99",
+            "category": "Desserts"
         }
     ],
-    "Soft Drinks": []
+    "Soft Drinks": [
+        {
+            "item_id": "39ec08",
+            "item_name": "Cola",
+            "size": "Bottle",
+            "price": "40",
+            "category": "Soft Drinks"
+        },
+        {
+            "item_id": "497793",
+            "item_name": "Fanta",
+            "size": "Bottle",
+            "price": "39",
+            "category": "Soft Drinks"
+        },
+        {
+            "item_id": "4f1c04",
+            "item_name": "Orange soda",
+            "size": "Bottle",
+            "price": "25",
+            "category": "Soft Drinks"
+        },
+        {
+            "item_id": "4f4e8c",
+            "item_name": "Mountain Dew",
+            "size": "Bottle",
+            "price": "59",
+            "category": "Soft Drinks"
+        }
+    ]
 }
