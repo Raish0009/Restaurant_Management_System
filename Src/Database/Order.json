@@ -1,142 +1,21 @@
 [
     {
-        "order_id": "4b0a7962",
-        "order_date": "2025-05-13 14:41:41",
+        "order_id": "16e0d7a4",
+        "order_date": "2025-05-18 10:38:05",
         "items": [
             {
-                "item_id": "f3c149",
-                "item_name": "daal",
-                "size": "Full",
-                "price": "300",
-                "category": "Dinner"
-            },
-            {
-                "item_id": "889458",
-                "item_name": "Rice",
-                "size": "Full",
-                "price": "50",
-                "category": "Dinner"
-            }
-        ],
-        "subtotal": 350,
-        "tax": 17.5,
-        "discount": 0,
-        "total_amount": 367.5
-    },
-    {
-        "order_id": "f1de8f98",
-        "order_date": "2025-05-14 13:51:18",
-        "items": [
-            {
-                "item_id": "5c0a3f",
-                "item_name": "coffee",
-                "size": "Full",
-                "price": "130",
-                "category": "Breakfast"
-            },
-            {
-                "item_id": "6ad2d1",
-                "item_name": "Milk",
-                "size": "Full",
-                "price": "40",
-                "category": "Breakfast"
-            }
-        ],
-        "subtotal": 170,
-        "tax": 8.5,
-        "discount": 0,
-        "total_amount": 178.5
-    },
-    {
-        "order_id": "dc0a0c72",
-        "order_date": "2025-05-14 14:09:51",
-        "items": [
-            {
-                "item_id": "5c0a3f",
-                "item_name": "coffee",
-                "size": "Full",
-                "price": "130",
-                "category": "Breakfast"
-            },
-            {
-                "item_id": "f3c149",
-                "item_name": "daal",
-                "size": "Full",
-                "price": "300",
-                "category": "Dinner"
-            }
-        ],
-        "subtotal": 430,
-        "tax": 21.5,
-        "discount": 0,
-        "total_amount": 451.5
-    },
-    {
-        "order_id": "19a35b18",
-        "order_date": "2025-05-14 14:32:16",
-        "items": [
-            {
-                "item_id": "c504e1",
-                "item_name": "tea",
-                "size": "Half",
-                "price": "20",
-                "category": "Breakfast"
-            },
-            {
-                "item_id": "6ad2d1",
-                "item_name": "Milk",
-                "size": "Full",
-                "price": "40",
-                "category": "Breakfast"
-            }
-        ],
-        "subtotal": 60,
-        "tax": 3.0,
-        "discount": 0,
-        "total_amount": 63.0,
-        "order_type": "Pack Order"
-    },
-    {
-        "order_id": "439e25dc",
-        "order_date": "2025-05-14 14:32:44",
-        "items": [
-            {
-                "item_id": "f3c149",
-                "item_name": "daal",
-                "size": "Full",
-                "price": "300",
-                "category": "Dinner"
-            },
-            {
-                "item_id": "889458",
-                "item_name": "Rice",
-                "size": "Full",
-                "price": "50",
-                "category": "Dinner"
-            }
-        ],
-        "subtotal": 350,
-        "tax": 17.5,
-        "discount": 0,
-        "total_amount": 367.5,
-        "order_type": "Table Booking"
-    },
-    {
-        "order_id": "b72b474c",
-        "order_date": "2025-05-15 11:24:32",
-        "items": [
-            {
-                "item_id": "e1f10b",
-                "item_name": "Water",
+                "item_id": "39ec08",
+                "item_name": "Cola",
                 "size": "Bottle",
-                "price": "30",
-                "category": "Drinks"
+                "price": 40,
+                "quantity": 5,
+                "total_price": 200
             }
         ],
-        "subtotal": 30,
-        "tax": 1.5,
+        "subtotal": 200,
+        "tax": 10.0,
         "discount": 0,
-        "total_amount": 31.5,
+        "total_amount": 210.0,
         "order_type": "Pack Order"
     }
 ]

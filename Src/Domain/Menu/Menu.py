@@ -38,7 +38,7 @@ class Menu:
 
         for category in list(self.FoodMenu.keys()): 
             items_in_category = self.FoodMenu[category]
-         
+        
             for i in range(len(items_in_category) - 1, -1, -1):
                 item = items_in_category[i]
                 if item["item_name"].lower() == name:
@@ -117,7 +117,7 @@ class Menu:
                     item_price = item.get('price', 'N/A')
                     print(f"{item_id:<8} | {item_name:<25} | {item_size:<15} | ₹{item_price:<7}") 
         if not any_item_displayed and not self.FoodMenu: 
-             print("Menu is completely empty.")
+            print("Menu is completely empty.")
 
 
     def menucard(self):
