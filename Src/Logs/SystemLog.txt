@@ -1,1 +1,7 @@
 [2025-05-18 11:08:04] New signup: ID=32e476, Email=rohits@gmail.com
+[2025-05-18 20:54:10] Failed login attempt for staff: mohan
+[2025-05-18 20:54:28] Failed login attempt for staff: jay
+[2025-05-18 20:54:43] Failed login attempt for admin: admin
+[2025-05-18 22:21:45] ValueError in Signin menu: invalid literal for int() with base 10: 'Admin'
+[2025-05-19 00:52:19] Exception in validate_login (staff): 'module' object is not callable
+[2025-05-19 01:13:34] Failed login attempt for admin: Admin

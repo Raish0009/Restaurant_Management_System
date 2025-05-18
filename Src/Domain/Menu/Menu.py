@@ -2,7 +2,7 @@ import uuid
 import json
 import os
 from Src.Domain.Order.OrderProcessing import OrderProcessing
-
+from Src.Domain.Reports.Reports import generate_report
 class Menu:
 
     def __init__(self):
@@ -127,7 +127,8 @@ class Menu:
             print("2. Add Item")
             print("3. Remove Item")
             print("4. Update Item")
-            print("5. Exit")
+            print("5. View Reports")
+            print("6. Exit")
 
             choice = input("Enter your choice: ").strip()
 
@@ -208,8 +209,11 @@ class Menu:
                 self.update_item()
 
             elif choice == "5":
+                 generate_report()
+            elif choice =="6":
                 print("Exiting Menu Management... Thank you! 🙏")
                 break
+
 
             else:
                 print("Invalid choice! Please try again.")

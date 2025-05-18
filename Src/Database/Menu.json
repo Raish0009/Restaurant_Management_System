@@ -301,7 +301,7 @@
     "Soft Drinks": [
         {
             "item_id": "39ec08",
-            "item_name": "Cola",
+            "item_name": "cola",
             "size": "Bottle",
             "price": "40",
             "category": "Soft Drinks"
